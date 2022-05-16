@@ -1,0 +1,29 @@
+.sign-in-field {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  label {
+    text-align: center;
+  }
+  &,
+  .forgotten-password-field {
+    color: $color-black;
+    text-decoration: none;
+    font-size: 1.2rem;
+    text-align: center;
+  }
+
+  .sign-in-link,
+  .forgotten-password {
+    color: $color-secondary;
+  }
+}
+
+.section-rememberUser {
+  flex-direction: row !important;
+  justify-items: center;
+  input {
+    width: auto;
+    margin: auto 0;
+  }
+}

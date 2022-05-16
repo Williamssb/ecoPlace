@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('partials/head', {pageTitle: 'EcoPlace'}) %>
+
+  <body>
+    <header>
+      <%- include('partials/navBar') %> <%- include('partials/header') %>
+    </header>
+
+    <main>
+      <section class="category-box">
+        <div class="category-main">
+          <article class="category-main-title">
+            <h3>Orgánicos</h3>
+            <a href="/products/categories/2"
+              ><img src="/img/categoria-comida.jpg" alt="comida organica"
+            /></a>
+          </article>
+          <div class="carrousel-products">
+            
+            <%for( let i=0; i < 3; i++ ) { %>
+            <article class="product-box">
+              <a href="/products/<%= organico[i].id %>">
+                <img
+                  src="/uploads/products/<%= organico[i].product_image %>"
+                  alt="Imagen producto"/>
+              </a>
+              <div class="product-name-box">
+                <p class="price"><%= organico[i].product_price %></p>
+                <h3 class="product-name"><%= organico[i].product_name %></h3>
+              </div>
+            </article>
+            <% } %>
+            
+          </div>
+        </div>
+
+        <div class="category-main">
+          <article class="category-main-title">
+            <h3>Flora y Jardín</h3>
+            <a href="/products/categories/1"
+              ><img src="/img/categoria-jardin.jpg" alt="avatar jardin"
+            /></a>
+          </article>
+          <div class="carrousel-products">
+            
+            <%for( let i=0; i < 3; i++ ) { %>
+            <article class="product-box">
+              <a href="/products/<%= floraYJardin[i].id %>"
+                ><img src="/uploads/products/<%= floraYJardin[i].product_image %>" alt="jardin de balcon"
+              /></a>
+              <div class="product-name-box">
+                <p class="price"><%= floraYJardin[i].product_price %></p>
+                <h3 class="product-name"><%= floraYJardin[i].product_name %></h3>
+              </div>
+            </article>
+            <% } %>
+            
+          </div>
+        </div>
+        <div class="category-main">
+          <article class="category-main-title">
+            <h3>Cuidado personal</h3>
+            <a href="/products/categories/3"
+              ><img
+                src="/img/CuidadoCategoria.jpg"
+                alt="avatar cuidado personal"
+            /></a>
+          </article>
+          <div class="carrousel-products">
+            
+            <%for( let i=0; i < 3; i++ ) { %>
+            <article class="product-box">
+              <a href="/products/<%= cuidadoPersonal[i].id %>"
+                ><img src="/uploads/products/<%= cuidadoPersonal[i].product_image %>" alt="jabon ecologico"
+              /></a>
+              <div class="product-name-box">
+                <p class="price"><%= cuidadoPersonal[i].product_price %></p>
+                <h3 class="product-name"><%= cuidadoPersonal[i].product_name %></h3>
+              </div>
+            </article>
+            <% } %>
+            
+          </div>
+        </div>
+        <div class="category-main">
+          <article class="category-main-title">
+            <h3>Hogar</h3>
+            <a href="/products/categories/4"
+              ><img src="/img/Categoria-hogar.JPG" alt="avatar hogar"
+            /></a>
+          </article>
+          <div class="carrousel-products">
+            
+            <%for( let i=0; i < 3; i++ ) { %>
+            <article class="product-box">
+              <a href="/products/<%= hogar[i].id %>"
+                ><img src="/uploads/products/<%= hogar[i].product_image %>" alt="Sillón ecologico"
+              /></a>
+              <div class="product-name-box">
+                <p class="price"><%= hogar[i].product_price %></p>
+                <h3 class="product-name"><%= hogar[i].product_name %></h3>
+              </div>
+            </article>
+            <% } %>
+            
+          </div>
+        </div>
+      </section>
+      <section>
+        <a href="/products" class="verMasButton"><h3 >Ver todos los productos</h3></a>
+      </section>
+
+
+      <!--Banner antes del footer con infografía-->
+      <section class="banner-footer">
+        <div class="banner-left-box">
+          <h3>En EcoPlace encontrarás productos ecológicos y sustentables</h3>
+          <div>
+            <i class="fab fa-pagelines banner-icon"></i>
+            <i class="fas fa-recycle banner-icon"></i>
+            <i class="fas fa-hand-holding-heart banner-icon"></i>
+            <i class="fas fa-globe-americas banner-icon"></i>
+            <i class="fas fa-hand-holding-water banner-icon"></i>
+          </div>
+        </div>
+        <div class="img-banner">
+          <img src="/img/foto-banner-envios.jpg" alt="envios eco" />
+        </div>
+      </section>
+    </main>
+
+    <%- include('partials/footer') %>
+  </body>
+</html>

@@ -1,0 +1,16 @@
+/*FOOTER*/
+
+.footer-style-main {
+  background-color: $color-terciary;
+  display: flex;
+  flex-flow: row wrap;
+  /*por ahora space around*/
+  justify-content: space-around;
+  padding: 40px 0;
+  color: #ebf1e4;
+  font-size: 2em;
+
+  ul {
+    list-style: none;
+  }
+}

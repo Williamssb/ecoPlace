@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('../partials/head', {pageTitle: 'Registro'}) %>
+
+  <body>
+    <header><%- include('../partials/navBar') %></header>
+
+    <main>
+      <section class="main-form">
+        <form action="/sign_up" method="POST" enctype="multipart/form-data" class="signUpForm">
+          <div class="form-header">
+            <img src="img/logo-2.png" alt="logo 2" />
+          </div>
+
+          <section class="user-field">
+            <input
+              type="text"
+              name="user_name"
+              id="userName"
+              placeholder="Ingresar usuario"
+              value="<%= locals.oldData?locals.oldData.user_name:null %>"
+            />
+            <span></span>
+          </section>
+
+          <div>
+            <p class="text-error">
+              <% if (locals.errors && errors.user_name) { %> <%=
+              errors.user_name.msg%> <% } %>
+            </p>
+          </div>
+
+          <section class="email-field">
+            <input
+              type=""
+              name="user_email"
+              id="userEmail"
+              placeholder="Ingresar email"
+              value="<%= locals.oldData?locals.oldData.user_email:null %>"
+            />
+            <span></span>
+          </section>
+          
+          <div class="text-error">
+            <% if (locals.errors && errors.user_email) { %> <%=
+            errors.user_email.msg%> <% } %>
+          </div>
+
+          <section class="password-field">
+            <input
+              type="password"
+              name="user_password"
+              id="userPassword"
+              placeholder="Ingresar contraseña"
+            />
+            <span></span>
+          </section>
+
+          <div class="text-error">
+            <% if (locals.errors && errors.user_password) { %> <%=
+            errors.user_password.msg%> <% } %>
+          </div>
+
+          <section class="password-field">
+            <input
+              type="password"
+              name="confirmSignUpPassword"
+              id="userConfirmPassword"
+              placeholder="Confirmar contraseña"
+            />
+            <span></span>
+          </section>
+
+          <div class="text-error">
+            <% if (locals.errors && errors.confirmSignUpPassword) { %> <%=
+            errors.confirmSignUpPassword.msg%> <% } %>
+          </div>
+
+          <section class="avatarImage">
+            <input type="file" name="user_image" id="userImage" multiple />
+            <span></span>
+          </section>
+          
+          <div class="text-error">
+            <% if (locals.errors && errors.user_image) { %> <%=
+            errors.user_image.msg%> <% } %>
+          </div>
+          
+          <section class="button-submit">
+            <button type="submit">REGISTRATE</button>
+          </section>
+
+          <section class="social-media-field">
+            <label>Registrate usando</label>
+            <div class="social-media">
+              <div class="social-media-icon">
+                <a href="#">
+                  <i class="fab fa-facebook-square"></i>
+                </a>
+              </div>
+              <div class="social-media-icon">
+                <a href="#">
+                  <i class="fab fa-instagram-square"></i>
+                </a>
+              </div>
+              <div class="social-media-icon">
+                <a href="#">
+                  <i class="fab fa-google-plus-square"></i>
+                </a>
+              </div>
+            </div>
+          </section>
+
+          <section class="sign-up-field">
+            <span
+              >Ingresa presionando
+              <a class="sign-in-link" href="/sign_in">Ingresar</a></span
+            >
+          </section>
+        </form>
+      </section>
+    </main>
+
+    <%- include('../partials/footer') %>
+    <%- include('../partials/loadScript', { scriptName: 'validationSignUp.js'})  %>
+  </body>
+</html>

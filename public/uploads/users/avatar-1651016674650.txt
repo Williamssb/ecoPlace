@@ -1,0 +1,9 @@
+En caso de no tener un id que corresponda con un producto, generar
+una redireccion al home.   FALTA
+
+
+Rehacer validation singin y singup FALTA
+
+DASHBOARD FALTA
+
+

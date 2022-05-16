@@ -1,0 +1,109 @@
+.carrousel {
+    display: none;
+    img {
+      width: 100%;
+  
+    }
+    ul {
+      list-style: none;
+    }
+  }
+  .categories-hide {
+    display: none;
+  }
+
+
+
+  
+  .carrousel-selectors {
+    display: none;
+    position: relative;
+  }
+  
+  @media (min-width: 576px){
+    
+
+    body {
+        width: 100%;
+    }
+    .carrousel {
+        
+        display: flex;
+        flex-flow: column wrap;
+        align-items: center;
+        position: relative;
+  
+      }
+      .headerQuote {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: flex-start;
+        width: 30%;
+        position: absolute;
+        transform: translateY(100%);
+        color: #ebf1e4;
+        font-size: 3.5em;
+        text-shadow: 0px 0px 10px #804000;;
+      
+      }
+      .categories-hide {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-around;
+        width: 70%;
+        position: absolute;
+        transform: translateY(30%);
+      
+      }
+      
+      .categories-hide li {
+        background-color: #39b54a;
+        color: #ebf1e4;
+        font-size: 1.5em;
+        border-radius: 5%;
+        padding: 0.5em;
+        width: 15%;
+        text-align: center;
+        box-shadow: 0px 0px 10px #804000;
+        transition: all, 0.5s;
+      
+        
+      }
+    
+      .categories-hide li:hover {
+        background-color: #804000;
+        box-shadow: 0px 0px 10px #ebf1e4;
+      }
+      
+//   .carrousel-selectors {
+//     display: inline-block;
+    
+//   }
+//   .carrousel-button1 {
+//     color: #39b54a;
+//     text-shadow: 0px 0px 10px #ebf1e4;
+//     font-size: 3em;
+//     position: relative;
+//     bottom: 250px;
+//     right: 600px;
+//     width: auto;
+//     transition: all, 0.5s;
+//   }
+
+//   .carrousel-button1:hover {
+//     color: #ebf1e4;
+//   }
+
+//   .carrousel-button2 {
+//     color: #39b54a;
+//     text-shadow: 0px 0px 10px #ebf1e4;
+//     font-size: 3em;
+//     position: relative;
+//     bottom: 250px;
+//     left: 600px;
+//     width: auto;
+//   }
+//   .carrousel-button2:hover {
+//     color: #ebf1e4;
+//   }
+   }

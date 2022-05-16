@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('../partials/head', {pageTitle: 'Login de usuario'}) %>
+
+  <body>
+    <header><%- include('../partials/navBar') %></header>
+
+    <main>
+      <section class="main-form">
+        <form action="/sign_in" method="POST" class="signInForm">
+          <div class="form-header">
+            <img src="img/logo-2.png" alt="logo 2" />
+            <!-- <i class="fas fa-leaf"></i>
+            <label> Eco<span>Place</span> </label> -->
+          </div>
+
+          <section class="user-field">
+            <input
+              type="text"
+              name="user_email"
+              id="userEmail"
+              placeholder="Ingresa el Email"
+              value="<%= locals.oldData?locals.oldData.user_email:null %>"
+            />
+            <span></span>
+            <div class="text-error">
+              <% if (locals.errors && errors.user_email) { %> <%=
+              errors.user_email.msg%> <% } %>
+            </div>
+          </section>
+
+          <section class="password-field">
+            <input
+              type="password"
+              name="user_password"
+              id="userPassword"
+              placeholder="Ingresa la Contraseña"
+            />
+            <span></span>
+            <div class="text-error">
+              <% if (locals.errors && errors.user_password) { %> <%=
+              errors.user_password.msg%> <% } %>
+            </div>
+          </section>
+          <section class="section-rememberUser">
+            <input name="rememberUser" type="checkbox" id="userPassword" />
+            <label>Recordar mi usuario</label>
+          </section>
+
+          <section class="button-submit">
+            <button type="submit">INGRESAR</button>
+          </section>
+
+          <section class="forgotten-password-field">
+            <!-- <label> -->
+            <a class="forgotten-password" href="#">Olvidé mi contraseña</a>
+            <!-- </label> -->
+          </section>
+
+          <section class="social-media-field">
+            <label>Ingresa usando</label>
+            <div class="social-media">
+              <div class="social-media-icon">
+                <a href="#">
+                  <i class="fab fa-facebook-square"></i>
+                </a>
+              </div>
+              <div class="social-media-icon">
+                <a href="#">
+                  <i class="fab fa-instagram-square"></i>
+                </a>
+              </div>
+              <div class="social-media-icon">
+                <a href="#">
+                  <i class="fab fa-google-plus-square"></i>
+                </a>
+              </div>
+            </div>
+          </section>
+
+          <section class="sign-in-field">
+            <span
+              >Registrate presionando
+              <a class="sign-in-link" href="/sign_up">Registrarse</a></span
+            >
+          </section>
+        </form>
+      </section>
+    </main>
+
+    <%- include('../partials/footer') %> <%- include('../partials/loadScript', {
+    scriptName: 'validationSignIn.js'}) %>
+  </body>
+</html>

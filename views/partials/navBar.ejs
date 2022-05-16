@@ -1,0 +1,50 @@
+<div class="nav-bar-main">
+  <nav class="nav-bar-box">
+    <div class="search-bar">
+      <form action="/busqueda" method="GET" target="_blank">
+        <div class="search-bar">
+          <input
+            type="search"
+            name="busquedam"
+            placeholder="Buscar en EcoPlace"
+          />
+
+          <button><i class="fas fa-search"></i></button>
+        </div>
+      </form>
+    </div>
+
+    <!--botón menú para celulares-->
+    <a href="#" class="hamburger-button-elias">
+      <i class="fas fa-bars"></i>
+    </a>
+    <!-- title -->
+    <a href="/"
+      ><h2 class="title contenedor-logo">
+        <i class="fas fa-leaf"></i>EcoPlace
+      </h2></a
+    >
+    <!-- Botones escritorio -->
+    <ul class="nav-block">
+      <% if (locals.userLogged) { %>
+      <!-- <li class="hide-login">Hola, <%= locals.userLogged.user_name%></li> -->
+      <li class="hide-profile"><a href="/profile">Perfil</a></li>
+      <li class="hide-login"><a href="/logOut">Log Out</a></li>
+      <li class="hide-login"><a href="/products/create">Crear producto</a></li>
+      <li>
+        <a href="/shopping_cart"><i class="fas fa-shopping-basket"></i></a>
+      </li>
+
+      <% } else {%>
+
+      <li class="hide-login"><a href="/sign_in">Iniciar Sesión</a></li>
+      <li class="hide-login"><a href="/sign_up">Registrarse</a></li>
+      <li>
+        <a href="/shopping_cart"><i class="fas fa-shopping-basket"></i></a>
+      </li>
+    
+
+      <% } %>
+    </ul>
+  </nav>
+</div>

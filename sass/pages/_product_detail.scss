@@ -1,0 +1,122 @@
+.product-general {
+  display: flex;
+  flex-direction: column;
+  width: 90vw;
+  margin: 2rem auto;
+
+  .product-preview {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 2rem;
+    &-options {
+      display: none;
+    }
+    &-photo {
+      margin: auto;
+      img {
+        width: 100%;
+        border: solid 1px $color-black;
+      }
+    }
+    &-details {
+      font-size: 1.5rem;
+      & > * {
+        margin-bottom: 0.5rem;
+      }
+      .product-name,
+      .product-category,
+      .product-price {
+        font-weight: bold;
+      }
+      .product-price {
+        display: inline-block;
+        background-color: rgba($color-primary, 0.7);
+        color: $color-white;
+        border: solid 2px $color-primary;
+      }
+      .main-form-product {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        & > * {
+          margin-bottom: 0.5rem;
+        }
+
+        select {
+          font-size: 1.5rem;
+        }
+      }
+    }
+  }
+
+  button {
+    text-align: center;
+    padding: 1rem;
+    background-color: $color-primary;
+    color: $color-white;
+    border-radius: 5%;
+    font-size: 1rem;
+    transition: all 0.1s ease;
+    &:active {
+      transform: translate(0.1rem, 0.1rem);
+    }
+    &:hover {
+      transform: translate(-0.1rem, -0.1rem);
+    }
+  }
+  .product-general-info {
+    display: flex;
+    flex-direction: row;
+    border: solid 1px $color-black;
+    .main-form-general-info {
+      display: flex;
+      flex-direction: column;
+      justify-content: stretch;
+      background-color: rgba($color-secondary, 0.4);
+    }
+    button {
+      font-size: 0.8rem;
+      display: block;
+    }
+    p {
+      padding: 2rem;
+      font-size: 1.5rem;
+      margin: 1rem;
+    }
+  }
+}
+
+main .editButton {
+  margin: 1rem;
+  float: right;
+  padding: 0.7rem 1rem;
+  background-color: $color-primary;
+  color: $color-white;
+  border-radius: 5%;
+  text-decoration: none;
+  font-weight: bold;
+  &:hover {
+    transform: translate(-0.1rem, -0.1rem);
+  }
+  &:active {
+    transform: translate(0.1rem, 0.1rem);
+  }
+}
+
+main .deleteButton {
+  font-size: 1rem;
+  margin: 1rem 2rem;
+  float: left;
+  padding: 0.7rem 1rem;
+  background-color: red;
+  color: $color-white;
+  border-radius: 5%;
+  text-decoration: none;
+  font-weight: bold;
+  &:hover {
+    transform: translate(-0.1rem, -0.1rem);
+  }
+  &:active {
+    transform: translate(0.1rem, 0.1rem);
+  }
+}

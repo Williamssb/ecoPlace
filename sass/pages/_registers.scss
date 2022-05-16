@@ -1,0 +1,117 @@
+.main-form {
+  background-color: $color-white;
+  margin: auto;
+  text-align: left;
+  padding: 2rem;
+  position: relative;
+  text-align: center;
+
+  .form-header {
+    display: inline-block;
+    text-align: center;
+    box-shadow: 0 0rem 0.7rem rgba($color-black, 0.5);
+    padding: 1rem;
+    border-radius: 50%;
+    background-color: rgb(250, 255, 233);
+    margin-bottom: 1rem;
+  }
+  .form-header img {
+    width: 3rem;
+  }
+
+  form section {
+    padding: 0.5rem;
+    display: flex;
+    flex-direction: column;
+
+    label {
+      font-size: 1.2rem;
+    }
+  }
+
+  button {
+    align-self: center;
+    text-align: center;
+    padding: 1rem;
+    background-color: $color-primary;
+    color: $color-white;
+    border-radius: 5%;
+    border-color: none;
+    transition: all 0.1s ease;
+    &:hover {
+      transform: translate(-0.1rem, -0.1rem);
+    }
+    &:active {
+      transform: translate(0.1rem, 0.1rem);
+    }
+  }
+
+  input {
+    align-self: center;
+    width: 100%;
+    border-left: none;
+    border-right: none;
+    border-top: none;
+    border-bottom: solid 0.1rem $color-black;
+    margin-bottom: 0.5rem;
+    position: relative;
+
+    &::placeholder {
+      font-size: 1.2rem;
+    }
+    + label {
+      transition: all 0.2s ease-in;
+      text-align: left;
+    }
+    &:placeholder-shown + label {
+      opacity: 0;
+      visibility: hidden;
+    }
+    &:focus {
+      outline: none;
+      border-bottom: solid 0.2rem $color-primary;
+    }
+  }
+
+  .section-buttons {
+    display: block !important;
+  }
+
+  .section-buttons > * {
+    width: 20%;
+  }
+
+  .uploadImage-field {
+    border-bottom: none !important;
+  }
+
+  .social-media {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    i {
+      margin: 0px 0.2rem;
+    }
+    &-icon {
+      font-size: 2.5rem;
+    }
+
+    &-field label {
+      text-align: center;
+    }
+
+    .fa-facebook-square {
+      color: #4267b3;
+    }
+    .fa-instagram-square {
+      color: #e1306c;
+    }
+    .fa-google-plus-square {
+      color: #dd4b39;
+    }
+  }
+}
+
+.text-error {
+  color: red;
+}

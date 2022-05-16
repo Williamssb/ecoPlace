@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('../partials/head', {pageTitle: 'Detalle del producto'}) %>
+
+  <body>
+    <header><%- include('../partials/navBar') %></header>
+
+    <main>
+      <% if (locals.userLogged) { %>
+      <form action="/products/<%=productData.id%>/edit" method="GET">
+        <button class="editButton" type="submit">EDITAR</button>
+      </form>
+      <form action="/products/<%=productData.id%>?_method=DELETE" method="POST">
+        <button class="deleteButton" type="submit">ELIMINAR</button>
+      </form>
+      <% }%>
+      <section class="product-general">
+        <section class="product-preview">
+          <div class="product-preview-options">
+            <img
+              src="/uploads/products/<%=productData.product_image%>"
+              alt="photoPreview1"
+              class="preview-option"
+            />
+            <img
+              src="/uploads/products/<%=productData.product_image%>"
+              alt="photoPreview2"
+              class="preview-option"
+            />
+            <img
+              src="/uploads/products/<%=productData.product_image%>"
+              alt="photoPreview3"
+              class="preview-option"
+            />
+          </div>
+          <div class="product-preview-photo">
+            <img
+              src="/uploads/products/<%=productData.product_image%>"
+              alt="photoPreviewPhoto"
+            />
+          </div>
+          <div class="product-preview-details">
+            <p class="product-category"><%=productData.category_id%></p>
+            <p class="product-name"><%=productData.product_name%></p>
+            <p class="product-price">$ <%=productData.product_price%></p>
+
+            <form action="#" class="main-form-product">
+              <!-- <label for="choice-others">Selecciona un color:</label>
+              <select
+                name="product-choice-others"
+                id="choice-others"
+                class="product-choice-others"
+              >
+                <option value="<%=productData.product_color%>">
+                  <%=productData.product_color%>
+                </option>
+              </select> -->
+
+              <button type="button" class="add-Cart">AGREGAR AL CARRITO</button>
+            </form>
+          </div>
+        </section>
+        <section class="product-general-info">
+          <form action="#" class="main-form-general-info">
+            <button type="button" class="product_details">DETALLES</button>
+            <button type="button" class="technical_Info">INFO TÉCNICA</button>
+            <button type="button" class="otherSpecifications">
+              ESPECIFICACIÓN
+            </button>
+            <button type="button" class="reviews">RESEÑAS</button>
+          </form>
+
+          <p class="product-general-info-text">
+            <%=productData.product_description%>
+          </p>
+        </section>
+      </section>
+    </main>
+
+    <%- include('../partials/footer') %>
+  </body>
+</html>

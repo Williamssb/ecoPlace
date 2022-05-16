@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('../partials/head', {pageTitle: 'Edicion del producto'}) %>
+  <body>
+    <header><%- include('../partials/navBar') %></header>
+    <main>
+      <section class="main-form">
+        <form
+          action="/products/<%=productData.id%>?_method=PUT"
+          method="POST"
+          enctype="multipart/form-data" class="validateForm"
+        >
+          <div class="form-header">
+            <img src="/img/logo-2.png" alt="logo 2" />
+          </div>
+          <section class="productName-field">
+            <input
+              type="text"
+              name="product_name"
+              id="productName"
+              placeholder="Ingresar nombre producto"
+              value="<%= locals.productData?locals.productData.product_name:null %>"
+            />
+            <span></span>
+          </section>
+          <div>
+            <p class="text-error">
+              <% if (locals.errors && errors.product_name) { %> <%=
+              errors.product_name.msg%> <% } %>
+            </p>
+          </div>
+
+          <section class="productPrice-field">
+            <input
+              type="text"
+              name="product_price"
+              id="productPrice"
+              placeholder="Ingresar precio producto"
+              value="<%= locals.productData?locals.productData.product_price:null %>"/>
+            <span></span>
+          </section>
+          <p class="text-error">
+            <% if (locals.errors && errors.product_price) { %> <%=
+            errors.product_price.msg%> <% } %>
+          </p>
+        </div>
+
+          <section class="productCategory-field">
+            <label for="productCategory"
+              >Selecciona una categoría
+              <select name="category_id" id="productCategory">
+                <option value="2" <%=productData.category_id==2?"selected":""%>>Orgánicos</option>
+                <option value="1" <%=productData.category_id==1?"selected":""%>>Flora Y Jardín</option>
+                <option value="3" <%=productData.category_id==3?"selected":""%>>Cuidado Personal</option>
+                <option value="4" <%=productData.category_id==4?"selected":""%>>Hogar</option>
+              </select></label
+            >
+          </section>
+
+          <section class="uploadImage-field">
+            <label for="file">Cargar imagen</label>
+            <input
+              type="file"
+              id="file"
+              name="product_image"
+              class="uploadImage-field"
+            />
+            <span></span>
+          </section>
+          <div>
+            <p class="text-error">
+              <% if (locals.errors && errors.product_image) { %> <%=
+              errors.product_image.msg%> <% } %>
+            </p>
+          </div>
+
+          <section class="productDescription-field">
+            <input
+              type="text"
+              name="product_description"
+              id="productDescription"
+              placeholder="Ingresar descripción producto"
+              value="<%= locals.productData?locals.productData.product_description:null %>">
+            </input>
+
+            <span></span>
+          </section>
+          <div>
+            <p class="text-error">
+              <% if (locals.errors && errors.product_description) { %> <%=
+              errors.product_description.msg%> <% } %>
+            </p>
+          </div>
+          
+          <section class="section-buttons">
+            <button type="submit">ACTUALIZAR</button>
+          </section>
+        </form>
+      </section>
+    </main>
+    <%- include('../partials/footer') %>
+    <%- include('../partials/loadScript', { scriptName: 'validationProduct.js'})  %>
+  </body>
+</html>

@@ -1,0 +1,114 @@
+.nav-bar-main {
+  background-color: $color-cuaternary;
+  width: 100%;
+  
+
+  nav ul {
+    list-style: none;
+    text-decoration: none;
+    color: $color-terciary;
+
+    li a {
+      color: $color-terciary;
+    }
+  }
+}
+
+.nav-bar-box {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  a {
+    text-decoration: none;
+  }
+}
+
+.search-bar {
+  width: 100%;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  font-size: 24px;
+  form {
+    width: 100%;
+  }
+}
+
+.hamburger-button-elias {
+  color: $color-terciary;
+}
+.nav-block {
+  display: flex;
+  flex-wrap: row nowrap;
+  font-size: 2.5em;
+}
+
+.title {
+  color: $color-primary;
+  font-family: "Shadows Into Light", cursive;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  font-size: 2rem;
+ 
+}
+.hide-login {
+  margin: 0 10px;
+  display: none;
+}
+
+
+
+@media (min-width: 576px){
+  
+  .hamburger-button-elias {
+    display: none;
+  }
+
+  .nav-bar-main {
+    padding: 20px;
+  }
+
+  .nav-bar-box {
+    display: flex;
+    flex-flow: row nowrap;
+  }
+
+  .nav-bar-box > * {
+    width: 30%;
+  }
+
+  .nav-block {
+    justify-content: flex-end;
+    font-size: 1.5em;
+  }
+  .contenedor-logo {
+    text-align: center;
+    font-size: 2.5rem;
+  }
+
+  .contenedor-logo a {
+    text-decoration: none;
+  }
+
+  .search-bar {
+    width: 30%;
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+  }
+
+  .hide-login {
+    display: flex;
+
+  }
+}
+
+
+@media (min-width: 768px) {
+  
+  .contenedor-logo{
+  font-size: 3rem;
+  }
+}
